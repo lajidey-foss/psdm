@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:loading_id",
+ "creation": "2026-03-25 23:41:10.651603",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_yrbw",
+  "loading_id",
+  "posting_date",
+  "slip_time",
+  "column_break_qjlu",
+  "order_id",
+  "default_warehouse",
+  "driver_mobile",
+  "column_break_gsdr",
+  "truck_plate",
+  "transporter",
+  "transporter_contact",
+  "amended_from",
+  "section_break_duze",
+  "slip_detail",
+  "section_break_qtjq",
+  "total_qty",
+  "column_break_sxcd",
+  "total_tons",
+  "section_break_bkdj",
+  "status",
+  "company"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_yrbw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Logon Slip",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "loading_id",
+   "fieldtype": "Data",
+   "label": "Loading ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "order_id",
+   "fieldtype": "Data",
+   "label": "Order ID"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "slip_time",
+   "fieldtype": "Time",
+   "label": "Slip Time"
+  },
+  {
+   "fieldname": "default_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "truck_plate",
+   "fieldtype": "Data",
+   "label": "Truck Plate"
+  },
+  {
+   "fieldname": "driver_mobile",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "Driver Mobile"
+  },
+  {
+   "fieldname": "transporter",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Transporter",
+   "options": "Transporter"
+  },
+  {
+   "fetch_from": "transporter.contact_phone",
+   "fieldname": "transporter_contact",
+   "fieldtype": "Data",
+   "label": "Transporter Contact"
+  },
+  {
+   "fieldname": "column_break_gsdr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_duze",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "slip_detail",
+   "fieldtype": "Table",
+   "label": "Slip Detail",
+   "options": "Logon Slip Detail"
+  },
+  {
+   "fieldname": "section_break_qtjq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty"
+  },
+  {
+   "fieldname": "column_break_sxcd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_tons",
+   "fieldtype": "Float",
+   "label": "Total Tons"
+  },
+  {
+   "fieldname": "section_break_bkdj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nScheduled\nIn Transit\nCompleted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qjlu",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-03-29 16:50:14.457924",
+ "modified_by": "Administrator",
+ "module": "Psd Manager",
+ "name": "Logon Slip",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

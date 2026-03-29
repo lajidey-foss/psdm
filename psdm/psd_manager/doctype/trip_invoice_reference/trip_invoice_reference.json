@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-27 15:40:18.345673",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "trip_allocate",
+  "sales_invoice",
+  "posting_date",
+  "column_break_xidb",
+  "customer",
+  "qty",
+  "qty_in_tons"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fetch_from": "sales_invoice.posting_date",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "column_break_xidb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "trip_allocate.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "trip_allocate.total_accepted_qty",
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty Uom"
+  },
+  {
+   "fieldname": "trip_allocate",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Trip Allocate",
+   "options": "Trip Allocation"
+  },
+  {
+   "fetch_from": "trip_allocate.total_qty_tons",
+   "fieldname": "qty_in_tons",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty In Tons"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-29 16:23:07.853927",
+ "modified_by": "Administrator",
+ "module": "Psd Manager",
+ "name": "Trip Invoice Reference",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
