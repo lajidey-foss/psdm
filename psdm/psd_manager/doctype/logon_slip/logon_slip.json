@@ -10,10 +10,12 @@
   "loading_id",
   "posting_date",
   "slip_time",
+  "logon_close_date",
   "column_break_qjlu",
   "order_id",
   "default_warehouse",
   "driver_mobile",
+  "driver_phone",
   "column_break_gsdr",
   "truck_plate",
   "transporter",
@@ -27,7 +29,9 @@
   "total_tons",
   "section_break_bkdj",
   "status",
-  "company"
+  "company",
+  "column_break_rttg",
+  "logon_closing"
  ],
  "fields": [
   {
@@ -58,6 +62,7 @@
   {
    "fieldname": "posting_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Posting Date"
   },
   {
@@ -79,7 +84,7 @@
   {
    "fieldname": "driver_mobile",
    "fieldtype": "Phone",
-   "in_list_view": 1,
+   "hidden": 1,
    "label": "Driver Mobile"
   },
   {
@@ -114,30 +119,35 @@
    "fieldtype": "Section Break"
   },
   {
+   "bold": 1,
    "fieldname": "total_qty",
    "fieldtype": "Float",
-   "label": "Total Qty"
+   "label": "Total Qty",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_sxcd",
    "fieldtype": "Column Break"
   },
   {
+   "bold": 1,
    "fieldname": "total_tons",
    "fieldtype": "Float",
-   "label": "Total Tons"
+   "in_list_view": 1,
+   "label": "Total Tons",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_bkdj",
    "fieldtype": "Section Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "status",
    "fieldtype": "Select",
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "Draft\nScheduled\nIn Transit\nCompleted\nCancelled",
-   "read_only": 1
+   "options": "Draft\nScheduled\nClosed\nCancelled"
   },
   {
    "fieldname": "company",
@@ -150,13 +160,38 @@
   {
    "fieldname": "column_break_qjlu",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver_phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Driver Phone"
+  },
+  {
+   "fieldname": "column_break_rttg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "logon_closing",
+   "fieldtype": "Data",
+   "label": "Logon Closing",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "logon_close_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Logon Close Date",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-29 16:50:14.457924",
+ "modified": "2026-04-14 17:39:44.884551",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Logon Slip",

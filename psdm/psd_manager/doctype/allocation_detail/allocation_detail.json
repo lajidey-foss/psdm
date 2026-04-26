@@ -7,9 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "item",
+  "uom",
   "accepted_qty",
   "qty_in_tons",
-  "rejected_qty"
+  "rejected_qty",
+  "lo_detail"
  ],
  "fields": [
   {
@@ -28,19 +30,36 @@
   {
    "fieldname": "rejected_qty",
    "fieldtype": "Float",
+   "in_list_view": 1,
    "label": "Rejected Qty"
   },
   {
    "fieldname": "qty_in_tons",
    "fieldtype": "Float",
+   "in_list_view": 1,
    "label": "Qty In Tons"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UoM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "lo_detail",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Logon Detail",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-03-29 15:54:12.554588",
+ "modified": "2026-04-12 13:17:16.102248",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Allocation Detail",
