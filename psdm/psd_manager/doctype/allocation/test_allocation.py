@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestTripAllocation(FrappeTestCase):
+class TestAllocation(FrappeTestCase):
 	pass

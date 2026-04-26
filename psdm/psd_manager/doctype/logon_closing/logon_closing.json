@@ -1,24 +1,27 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:LCD-{logon}",
  "creation": "2026-03-26 09:50:31.482587",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_85pf",
-  "logon_close_date",
+  "posting_date",
   "posting_time",
   "status",
   "column_break_dtgl",
+  "logon_close_date",
   "logon",
   "logon_slip_date",
   "amended_from",
-  "linked_invoices_section",
-  "trip_transactions",
+  "section_break_pxab",
+  "logon_reconciliation",
+  "default_warehouse",
   "section_break_eocc",
   "logon_reference_details",
-  "section_break_pxab",
-  "logon_reconciliation"
+  "linked_invoices_section",
+  "trip_transactions"
  ],
  "fields": [
   {
@@ -63,13 +66,14 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\nSubmitted"
+   "options": "Draft\nSubmitted\nQueued\nFailed\nCancelled"
   },
   {
    "fieldname": "column_break_dtgl",
    "fieldtype": "Column Break"
   },
   {
+   "collapsible": 1,
    "fieldname": "linked_invoices_section",
    "fieldtype": "Section Break",
    "label": "Linked Invoices"
@@ -98,16 +102,30 @@
    "fieldtype": "Table",
    "label": "Logon Reconciliation",
    "options": "Logon Closing Entry Detail"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fetch_from": "logon.default_warehouse",
+   "fieldname": "default_warehouse",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Default Warehouse"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-29 12:56:25.277286",
+ "modified": "2026-04-21 00:06:09.857109",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Logon Closing",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

@@ -51,7 +51,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Trip Allocate",
-   "options": "Trip Allocation"
+   "options": "Allocation"
   },
   {
    "fetch_from": "trip_allocate.total_qty_tons",
@@ -65,7 +65,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-03-29 16:23:07.853927",
+ "modified": "2026-04-12 16:30:01.146874",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Trip Invoice Reference",
