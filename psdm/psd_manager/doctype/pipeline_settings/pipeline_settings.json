@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-26 16:30:53.977057",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "default_supplier",
+  "column_break_ddjd",
+  "lifting_warehouse",
+  "column_break_rqvb",
+  "rejected_warehouse",
+  "section_break_cqai",
+  "default_message"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "default_supplier",
+   "fieldtype": "Link",
+   "label": "Default Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_ddjd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Can not be same as \"Default Warehouse\"",
+   "fieldname": "lifting_warehouse",
+   "fieldtype": "Link",
+   "label": "Lifting Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_rqvb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Can't be same as \"Default Warehouse\"",
+   "fieldname": "rejected_warehouse",
+   "fieldtype": "Link",
+   "label": "Rejected Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "section_break_cqai",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "default_message",
+   "fieldtype": "Small Text",
+   "label": "Default Message"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-04-26 16:41:41.332125",
+ "modified_by": "Administrator",
+ "module": "Psd Manager",
+ "name": "Pipeline Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -31,6 +31,18 @@ frappe.ui.form.on("Allocation", {
         }
 
     },
+    refresh: function(frm) {
+        if(frm.is_new() ){
+			frm.set_value('status', "Draft");
+		}
+        //frm.disable_save();
+    },
+    is_recieved: function(frm) {
+        if (!(frm.doc.status == "Recieved")) {
+            frm.set_value('status', "Recieved");
+        }
+        //frm.set_value('status', "Recieved");
+    }
 });
 
 frappe.ui.form.on("Allocation Detail", {

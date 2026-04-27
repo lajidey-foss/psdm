@@ -32,7 +32,7 @@ frappe.ui.form.on("Logon Closing", {
                     },
                     callback: (r) => {
                         if (r.message) {
-                            frappe.msgprint(__('Stock Entry created, awaiting review before submittion'));
+                            frappe.msgprint(__('Stock Entry created, awaiting review before submission'));
                         }
                     }
                 });

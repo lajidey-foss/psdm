@@ -8,18 +8,13 @@ from frappe.utils import flt
 
 
 class LogonClosing(Document):
-	def on_update(self):
-		if self.status == "Submitted":
-			update_logon_slip(self)
-		
-		# delete above script to cleanup code
 
 	def on_submit(self):
-		#update_logon_slip(self)
-		# delete below and uncomment above
-		if self.status == "Draft":
-			update_logon_slip(self)
-	#pass
+		self.db_set("status", "Submitted")
+		self.reload()
+
+		update_logon_slip(self)
+		
 
 
 def update_logon_slip(self):
@@ -65,10 +60,11 @@ def close_cycle(end, slip):
 	
 @frappe.whitelist()
 def process_rejects(self):
+	ps_settings = frappe.get_doc('Pipeline Settings')
 	"""move rejected inventory to rejected warehouse pending actual backloading"""
 	self = frappe.parse_json(self)
 	reconciliation_item = frappe.parse_json(self.logon_reconciliation)
-	print(f"==================> \n logon default_warehouse :{self.default_warehouse} \n ")
+	print(f"==================> \n logon default_warehouse :{self.lifting_warehouse} \n ")
 	# destination warehouse
 	""" target_warehouse = frappe.db.get_single_value("Stock settings", "default_target_warehouse")
 	if not target_warehouse:
@@ -83,16 +79,19 @@ def process_rejects(self):
 	stock_entry.posting_time = self.posting_time
 	stock_entry.reference_doctype = "Logon Closing"
 	stock_entry.reference_name = self.name
-	stock_entry.from_warehouse = self.default_warehouse
-	stock_entry.to_warehouse = "Stores - OC"
+	stock_entry.from_warehouse = ps_settings.lifting_warehouse or self.lifting_warehouse
+	stock_entry.to_warehouse = ps_settings.rejected_warehouse # or "Stores - OC"
 
 	for item in reconciliation_item:
-		print(f"==================> \n recon :{item} \n ")
+		#print(f"==================> \n recon :{item} \n ")
+		""" if (flt(item.get('difference')) < 1):
+			frappe.throw(_("Reject not required")) """
+
 		stock_entry.append("items", {
 			"item_code": item.get('item'),
 			"qty": item.get('difference'),
-			"s_warehouse": self.default_warehouse,
-			"t_warehouse": "Stores - OC" #target_warehouse
+			"s_warehouse": ps_settings.lifting_warehouse or self.lifting_warehouse,
+			"t_warehouse": ps_settings.rejected_warehouse
 		})
 		""",
 			"uom": item.uom,

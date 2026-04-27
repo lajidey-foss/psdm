@@ -13,7 +13,7 @@
   "logon_close_date",
   "column_break_qjlu",
   "order_id",
-  "default_warehouse",
+  "lifting_warehouse",
   "driver_mobile",
   "driver_phone",
   "column_break_gsdr",
@@ -26,6 +26,7 @@
   "section_break_qtjq",
   "total_qty",
   "column_break_sxcd",
+  "total_amount",
   "total_tons",
   "section_break_bkdj",
   "status",
@@ -52,6 +53,7 @@
    "fieldname": "loading_id",
    "fieldtype": "Data",
    "label": "Loading ID",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -63,18 +65,14 @@
    "fieldname": "posting_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Posting Date"
+   "label": "Posting Date",
+   "reqd": 1
   },
   {
+   "default": "Now",
    "fieldname": "slip_time",
    "fieldtype": "Time",
    "label": "Slip Time"
-  },
-  {
-   "fieldname": "default_warehouse",
-   "fieldtype": "Link",
-   "label": "Default Warehouse",
-   "options": "Warehouse"
   },
   {
    "fieldname": "truck_plate",
@@ -112,7 +110,8 @@
    "fieldname": "slip_detail",
    "fieldtype": "Table",
    "label": "Slip Detail",
-   "options": "Logon Slip Detail"
+   "options": "Logon Slip Detail",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_qtjq",
@@ -133,7 +132,7 @@
    "bold": 1,
    "fieldname": "total_tons",
    "fieldtype": "Float",
-   "in_list_view": 1,
+   "hidden": 1,
    "label": "Total Tons",
    "read_only": 1
   },
@@ -145,6 +144,7 @@
    "allow_on_submit": 1,
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
    "options": "Draft\nScheduled\nClosed\nCancelled"
@@ -185,13 +185,28 @@
    "in_list_view": 1,
    "label": "Logon Close Date",
    "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "description": "GLW",
+   "fieldname": "lifting_warehouse",
+   "fieldtype": "Link",
+   "label": "Lifting Warehouse",
+   "options": "Warehouse"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-14 17:39:44.884551",
+ "modified": "2026-04-27 03:09:36.297006",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Logon Slip",
