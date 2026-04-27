@@ -8,11 +8,10 @@
  "field_order": [
   "posting_date",
   "customer",
-  "status",
   "column_break_obey",
   "logon",
   "delivery_date",
-  "is_delivered",
+  "is_recieved",
   "section_break_bghd",
   "allocation_detail",
   "section_break_lnpi",
@@ -21,7 +20,8 @@
   "company",
   "column_break_watr",
   "total_rejected_qty",
-  "sales_invoice"
+  "sales_invoice",
+  "status"
  ],
  "fields": [
   {
@@ -30,14 +30,16 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Logon",
-   "options": "Logon Slip"
+   "options": "Logon Slip",
+   "reqd": 1
   },
   {
    "fieldname": "customer",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "reqd": 1
   },
   {
    "fieldname": "delivery_date",
@@ -49,13 +51,8 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\nRecieved\nRejected"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_delivered",
-   "fieldtype": "Check",
-   "label": "Is Delivered"
+   "options": "Draft\nRecieved\nRejected",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_bghd",
@@ -65,7 +62,8 @@
    "fieldname": "allocation_detail",
    "fieldtype": "Table",
    "label": "Allocation Detail",
-   "options": "Allocation Detail"
+   "options": "Allocation Detail",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_lnpi",
@@ -118,12 +116,18 @@
    "fieldtype": "Float",
    "label": "Total Rejected Qty",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_recieved",
+   "fieldtype": "Check",
+   "label": "Recieved"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-19 17:30:28.199305",
+ "modified": "2026-04-27 02:11:14.510089",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Allocation",

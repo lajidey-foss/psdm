@@ -17,7 +17,7 @@
   "amended_from",
   "section_break_pxab",
   "logon_reconciliation",
-  "default_warehouse",
+  "lifting_warehouse",
   "section_break_eocc",
   "logon_reference_details",
   "linked_invoices_section",
@@ -63,6 +63,7 @@
    "label": "Posting Time"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
@@ -110,18 +111,18 @@
    "label": "Posting Date"
   },
   {
-   "fetch_from": "logon.default_warehouse",
-   "fieldname": "default_warehouse",
+   "fetch_from": "logon.lifting_warehouse",
+   "fieldname": "lifting_warehouse",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "Default Warehouse"
+   "label": "Lifting Warehouse"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-21 00:06:09.857109",
+ "modified": "2026-04-27 03:03:44.298583",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Logon Closing",

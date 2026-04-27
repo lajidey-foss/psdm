@@ -16,6 +16,13 @@ frappe.ui.form.on("Logon Slip", {
                 total_tons += flt (elmt.qty_in_tons);
             });
             frm.set_value("total_tons", total_tons);
+        },
+        frm.get_total_amount = function(frm) {
+            let total_amount = 0.0;
+            frm.doc.slip_detail.forEach(elmt => {
+                total_amount += flt(elmt.qty) * flt(elmt.rate) ;
+            });
+            frm.set_value("total_amount", total_amount);
         }
 
     },
@@ -55,5 +62,26 @@ frappe.ui.form.on("Logon Slip Detail", {
     qty_in_tons: function (frm, cdt, cdn) {
         frm.get_tons_qty_fig(frm);
         frm.refresh_field(qty_in_tons);
+    },
+    rate: function (frm, cdt, cdn) {
+        frm.get_total_amount(frm);
+        //frm.refresh_field(rate);
+        updateLine(frm, cdt, cdn);
     }
-})
+});
+
+var updateLine = function(frm, cdt, cdn) {
+    let row = locals[cdt][cdn];
+
+    if (!row.rate) return;
+    //console.table(row);
+    
+    
+    let amount = (row.qty || 0) * (row.rate || 0);
+
+    // Use frappe.model.set_value to ensure the UI updates and the form is marked 'Dirty'
+    frappe.model.set_value(cdt, cdn, 'amount', amount);
+    
+    // Refresh the table field to show changes
+    frm.refresh_field('items');
+};

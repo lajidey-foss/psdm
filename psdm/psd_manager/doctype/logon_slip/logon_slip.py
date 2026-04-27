@@ -5,26 +5,53 @@ import frappe
 from frappe.model.document import Document
 from frappe.model.mapper import get_mapped_doc
 from frappe.utils import flt
+from frappe import _
 
 
 class LogonSlip(Document):
-	#def
-	def on_update(self):
+	def on_submit(self):
+		if not self.slip_detail:
+			frappe.throw(_("Add items before submitting"))
+		#self.status = "Scheduled"
+		""" frappe.db.set_value(
+			self.doctype,
+			self.name,
+			"status",
+			"Scheduled",
+			update_modified=True
+		) """
+		self.db_set("status", "Scheduled")
+		self.reload()
+
 		self.create_purchase_invoice()
-		""" if self.status == "Submit" :
-			self.create_purchase_invoice() """
+		#pass
+	def on_cancel(self):
+		self.status = "Cancelled"
+		frappe.db.set_value(
+			self.doctype,
+			self.name,
+			"status",
+			"Cancelled",
+			update_modified=True
+		)
+
+	""" def on_update(self):
+		self.create_purchase_invoice() """
 	
 	def create_purchase_invoice(self):
+		ps_settings = frappe.get_doc('Pipeline Settings')
+
 		new_pi = frappe.new_doc("Purchase Invoice")
-		new_pi.supplier = "LAFARGE"
+		new_pi.supplier = ps_settings.default_supplier # or "LAFARGE"
 		new_pi.company = self.company or frappe.defaults.get_user_default("company")
 		new_pi.update_stock = True
-		new_pi.set_warehouse = self.default_warehouse
+		new_pi.set_warehouse = self.lifting_warehouse
 
 		for row in self.get("slip_detail") :
 			new_pi.append("items", {
 				"item_code": row.item,
-				"qty": row.qty
+				"qty": row.qty,
+				"rate": row.rate
 			})
 		new_pi.insert()
 
@@ -33,31 +60,7 @@ class LogonSlip(Document):
 
 
 @frappe.whitelist()
-def xcreate_trip (source_name, target_doc=None):
-
-	def postprocess(source, doc):
-		# doc.idea = source.name
-		doc.logon = source.name,
-	
-	doc = get_mapped_doc(
-		"Logon Slip",
-		source_name,
-		{
-			"Logon Slip": {
-				"doctype": "Trip Allocation",
-				"field_map": {
-					"name": "logon"
-				},
-			},
-		},
-		target_doc,
-		postprocess,
-	)
-	return doc
-
-@frappe.whitelist()
 def create_trip(source_doc, target_doc=None):
-
 	def update_item(source_doc, target_doc, source_parent):
 		def get_billed_qty(lt_item):
 			from frappe.query_builder.functions import Sum
@@ -66,25 +69,31 @@ def create_trip(source_doc, target_doc=None):
 			query = (
 				frappe.qb.from_(table)
 				.select(Sum(table.accepted_qty).as_("qty"))
-				.where((table.docstatus == 0) & (table.lo_detail == lt_item ) )
+				.where( (table.lo_detail == lt_item ) )
 			)
+			# (table.status != "Rejected") &
 			return query.run(pluck="qty")[0] 
 
 		already_allocated = get_billed_qty(source_doc.name) or 0
 		# it is returning None
-		print(f"==================> \n already_allocated :{already_allocated} \n ")
+		#print(f"==================> \n already_allocated :{already_allocated} \n ")
 		pending_qty = flt(source_doc.qty) - flt(already_allocated)
+		
 		if pending_qty > 0:
 			target_doc.accepted_qty = pending_qty
 		else:
-			target_doc.accepted_qty = 0
+			# target_doc.accepted_qty = 0
+			frappe.throw(_("Cannot allocate more quantity"))
 		#target_doc.accepted_qty = flt(source_doc.qty) - flt(already_allocated) 
 
 	doclist = get_mapped_doc(
 		"Logon Slip",
 		source_doc,
 		{
-			"Logon Slip": {"doctype": "Allocation", "validation": {"docstatus": ["=", 0]}},
+			"Logon Slip": {
+				"doctype": "Allocation", 
+				"validation": {"docstatus": ["=", 1]}
+				},
 			"Logon Slip Detail": {
 				"doctype": "Allocation Detail",
 				"field_map": {
