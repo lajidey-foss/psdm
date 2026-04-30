@@ -211,6 +211,7 @@
    "label": "Wallet Pay Ref"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "pay_wallet",
    "fieldtype": "Link",
    "in_standard_filter": 1,
@@ -218,6 +219,7 @@
    "options": "Pay Wallet"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "location",
    "fieldtype": "Link",
    "label": "Location",
@@ -228,7 +230,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-29 06:31:23.292123",
+ "modified": "2026-04-29 22:56:34.154214",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Logon Slip",
