@@ -137,13 +137,11 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Payment Entry": {
+        "on_update": "psdm.utils.app.wallet_pay_update",
+	}
+}
 
 # Scheduled Tasks
 # ---------------
@@ -256,7 +254,8 @@ fixtures = [
                 (
                     "Purchase Invoice-custom_logon",
                     "Sales Invoice-custom_logon",
-                    "Sales Invoice-custom_allocation"
+                    "Sales Invoice-custom_allocation",
+                    "Payment Entry-custom_wallet_bank_ref"
                 )
             ]
         ]
