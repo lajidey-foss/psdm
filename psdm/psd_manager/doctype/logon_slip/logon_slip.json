@@ -200,6 +200,7 @@
    "description": "GLW",
    "fieldname": "lifting_warehouse",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Lifting Warehouse",
    "options": "Warehouse"
   },
@@ -230,8 +231,8 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-29 22:56:34.154214",
- "modified_by": "Administrator",
+ "modified": "2026-05-01 00:00:11.883704",
+ "modified_by": "glodmin@oasx.io",
  "module": "Psd Manager",
  "name": "Logon Slip",
  "naming_rule": "By fieldname",

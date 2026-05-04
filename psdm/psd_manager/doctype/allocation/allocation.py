@@ -16,20 +16,23 @@ class Allocation(Document):
 	def create_sales_invoice(self):
 		""" # Initialize the new Sales Invoice document
         new_si.insert() """
+		ps_settings = frappe.get_doc('Pipeline Settings')
 		new_si = frappe.new_doc("Sales Invoice")
 
 		# map
 		new_si.customer = self.customer
 		# new_si.posting_date = self.date or nowdate()
-		# new_si.due_date = self.due_date or nowdate()
 		new_si.company = self.company or frappe.defaults.get_user_default("company")
 		new_si.custom_logon = self.logon
+		new_si.update_stock = True
 		new_si.custom_trip = self.name
+		new_si.set_warehouse = ps_settings.lifting_warehouse
 
 		for row in self.get("allocation_detail"):
 			new_si.append("items", {
 				"item_code": row.item,
 				"qty": row.accepted_qty,
+				"warehouse": ps_settings.lifting_warehouse,
 				"income_account": self.get_default_income_account()
 			})
 		
