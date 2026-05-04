@@ -35,7 +35,9 @@ frappe.ui.form.on("Allocation", {
         if(frm.is_new() ){
 			frm.set_value('status', "Draft");
 		}
-        //frm.disable_save();
+        if (!(frm.is_new()) && (frm.doc.is_recieved) && (frm.doc.status == "Recieved")) {
+            frm.disable_save();
+        }
     },
     is_recieved: function(frm) {
         if (!(frm.doc.status == "Recieved")) {

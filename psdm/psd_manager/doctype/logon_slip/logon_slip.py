@@ -45,7 +45,7 @@ class LogonSlip(Document):
 		new_pi.supplier = ps_settings.default_supplier # or "LAFARGE"
 		new_pi.company = self.company or frappe.defaults.get_user_default("company")
 		new_pi.update_stock = True
-		new_pi.set_warehouse = self.lifting_warehouse
+		new_pi.set_warehouse = ps_settings.lifting_warehouse
 
 		for row in self.get("slip_detail") :
 			new_pi.append("items", {
