@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:DOC-{truckon}",
+ "creation": "2026-09-02 08:49:22.082595",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "posting_time",
+  "status",
+  "column_break_ayrr",
+  "truckon_close_date",
+  "truckon",
+  "truckon_date",
+  "section_break_vano",
+  "truckon_reconciliation",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nQueued\nFailed\nCancelled"
+  },
+  {
+   "fieldname": "column_break_ayrr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "truckon_close_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Truckon Close Date"
+  },
+  {
+   "fieldname": "truckon",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Truckon",
+   "options": "Truckon"
+  },
+  {
+   "fetch_from": "truckon.dispatch_date",
+   "fieldname": "truckon_date",
+   "fieldtype": "Date",
+   "label": "Truckon Date"
+  },
+  {
+   "fieldname": "section_break_vano",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "truckon_reconciliation",
+   "fieldtype": "Table",
+   "label": "Truckon Reconciliation",
+   "options": "Truckon Closing Detail"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Truckon Closing",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-09-03 06:11:04.147719",
+ "modified_by": "Administrator",
+ "module": "Psd Manager",
+ "name": "Truckon Closing",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Academics User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
