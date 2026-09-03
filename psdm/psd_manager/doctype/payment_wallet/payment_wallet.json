@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:wallet_code",
+ "creation": "2026-08-30 14:05:24.673348",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "wallet_code",
+  "posting_date",
+  "column_break_gccg",
+  "amount",
+  "section_break_edmi",
+  "request_code",
+  "column_break_fvsp",
+  "total_tons",
+  "pw_status",
+  "reference_section",
+  "transfer_references",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "wallet_code",
+   "fieldtype": "Data",
+   "label": "Wallet Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "column_break_gccg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "pw_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "PW Status",
+   "options": "\nIn Progress\nCompleted"
+  },
+  {
+   "fieldname": "section_break_edmi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "request_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Request Code"
+  },
+  {
+   "fieldname": "column_break_fvsp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_tons",
+   "fieldtype": "Float",
+   "label": "Total Tons"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "transfer_references",
+   "fieldtype": "Table",
+   "label": "Transfer References",
+   "options": "Transfer Entry Reference"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payment Wallet",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-09-03 16:47:48.931083",
+ "modified_by": "Administrator",
+ "module": "Psd Manager",
+ "name": "Payment Wallet",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "request_code",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

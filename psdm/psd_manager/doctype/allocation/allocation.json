@@ -9,6 +9,7 @@
   "posting_date",
   "customer",
   "column_break_obey",
+  "truckon",
   "logon",
   "delivery_date",
   "is_recieved",
@@ -27,11 +28,8 @@
   {
    "fieldname": "logon",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Logon",
-   "options": "Logon Slip",
-   "reqd": 1
+   "options": "Logon Slip"
   },
   {
    "fieldname": "customer",
@@ -122,12 +120,20 @@
    "fieldname": "is_recieved",
    "fieldtype": "Check",
    "label": "Recieved"
+  },
+  {
+   "fieldname": "truckon",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Truckon",
+   "options": "Truckon"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-28 19:59:19.693775",
+ "modified": "2026-09-03 05:52:50.043347",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Allocation",
