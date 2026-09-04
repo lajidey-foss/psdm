@@ -3,7 +3,7 @@
 
 frappe.ui.form.on("Allocation", {
 	onload: function (frm) {
-        frm.set_query("logon", function (doc) {
+        frm.set_query("truckon", function (doc) {
             return { filters: { status: "Scheduled"}};
         });
     },

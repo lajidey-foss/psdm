@@ -44,8 +44,10 @@
    "label": "Dispatch Date"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "trunckon_close_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Trunckon Close Date",
    "read_only": 1
   },
@@ -60,8 +62,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "payment_wallet",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Payment Wallet",
    "options": "Payment Wallet"
   },
@@ -73,9 +78,12 @@
    "options": "Warehouse"
   },
   {
+   "allow_on_submit": 1,
    "fetch_from": "payment_wallet.request_code",
    "fieldname": "request_order",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Request Order",
    "read_only": 1
   },
@@ -133,8 +141,11 @@
    "options": "Company"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
    "options": "Draft\nScheduled\nClosed\nCancelled"
   },
@@ -143,6 +154,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "truckon_closing",
    "fieldtype": "Data",
    "label": "Truckon Closing",
@@ -170,7 +182,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-03 06:23:35.266296",
+ "modified": "2026-09-04 10:18:42.897202",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Truckon",
