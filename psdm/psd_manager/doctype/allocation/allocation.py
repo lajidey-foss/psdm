@@ -23,7 +23,7 @@ class Allocation(Document):
 		new_si.customer = self.customer
 		# new_si.posting_date = self.date or nowdate()
 		new_si.company = self.company or frappe.defaults.get_user_default("company")
-		new_si.custom_logon = self.logon
+		new_si.custom_truckon = self.truckon
 		new_si.update_stock = True
 		new_si.custom_trip = self.name
 		new_si.set_warehouse = ps_settings.lifting_warehouse
