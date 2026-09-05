@@ -34,10 +34,10 @@ frappe.listview_settings["Truckon Closing"] = {
 
                 // Call the server‐side method
                 frappe.call({
-                    method: 'psdm.psd_manager.doctype.truckon_closing.truckon_closing.close_cycle',
+                    method: 'psdm.psd_manager.doctype.truckon_closing.truckon_closing.close_truckon',
                     args: {
                         end: values.truckon_close_date,
-                        slip: values.truckon
+                        truckon: values.truckon
                     },
                     callback: (r) => {
                         if (r.message) {

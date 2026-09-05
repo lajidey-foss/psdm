@@ -27,7 +27,7 @@ frappe.ui.form.on("Truckon", {
 
     },
     refresh(frm) {
-        if(!frm.is_new()) {
+        if(frm.doc.docstatus == 1) {
 			// Quotation or [Request for Quote]
 			frm.add_custom_button(__('Allocate'),
 				function() {

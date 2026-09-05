@@ -147,7 +147,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "Draft\nScheduled\nClosed\nCancelled"
+   "options": "Draft\nScheduled\nClosed\nCancelled",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_mahk",
@@ -182,7 +183,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-04 10:18:42.897202",
+ "modified": "2026-09-05 00:48:09.744411",
  "modified_by": "Administrator",
  "module": "Psd Manager",
  "name": "Truckon",
