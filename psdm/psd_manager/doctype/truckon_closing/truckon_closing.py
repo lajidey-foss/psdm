@@ -17,7 +17,7 @@ class TruckonClosing(Document):
 def update_truckon(self):
 	open_truck = frappe.get_doc("Truckon", self.truckon)
 	open_truck.truckon_closing = self.name
-	open_truck.trunckon_close_date = self.logon_close_date
+	open_truck.trunckon_close_date = self.truckon_close_date
 	open_truck.status = "Closed"
 	open_truck.save()
 
@@ -33,9 +33,9 @@ def close_truckon(end, truckon):
 			)[0][0] or 0
 			truckon_reconcil.append({
 				"item": row.item,
-				"logon_qty": row.qty,
+				"dispatch_qty": row.quantity,
 				"delivered_qty": allotted_qty,
-				"difference": flt(row.qty) - flt(allotted_qty)
+				"difference": flt(row.quantity) - flt(allotted_qty)
 			})
 
 			doc = frappe.get_doc({

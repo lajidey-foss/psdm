@@ -24,7 +24,7 @@ class Truckon(Document):
 			self.doctype,
 			self.name,
 			"status",
-			"Cancellec",
+			"Cancelled",
 			update_modified=True
 		)
 
@@ -41,7 +41,7 @@ class Truckon(Document):
 		for row in self.get("items") :
 			new_pi.append("items", {
 				"item_code": row.item,
-				"qty": row.qty,
+				"qty": row.quantity,
 				"rate": row.rate
 			})
 
@@ -67,7 +67,7 @@ def create_trip(source_doc, target_doc=None):
 
 		already_allocated = get_billed_qty(source_doc.name) or 0
 
-		pending_qty = flt(source_doc.qty) - flt(already_allocated)
+		pending_qty = flt(source_doc.quantity) - flt(already_allocated)
 
 		if pending_qty > 0:
 			target_doc.accepted_qty = pending_qty
@@ -86,7 +86,7 @@ def create_trip(source_doc, target_doc=None):
 				"doctype": "Allocation Detail",
 				"field_map": {
 					"name": "lo_detail",
-					"parent": "logon_slip",
+					"parent": "truckon",
 				},
 				"postprocess": update_item,
 			},

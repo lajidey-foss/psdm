@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"VVvJ1lUcfc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Outgoing Bills\",\"col\":3}},{\"id\":\"Vlj2FZtlHV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incoming Bills\",\"col\":3}},{\"id\":\"VVVjQVAhPf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incoming Payment\",\"col\":3}},{\"id\":\"DySNdlysIW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Outgoing Payment\",\"col\":3}},{\"id\":\"9k1rDm2C0l\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vikWSkNm6_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"id\":\"pMywM0nhlj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"logon\",\"col\":3}},{\"id\":\"G984SgVRJN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Allocation\",\"col\":3}},{\"id\":\"1ArNvt9qhz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Logon Closing\",\"col\":3}},{\"id\":\"_pRdD6kqUG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pay Wallet\",\"col\":3}},{\"id\":\"F9f4I1viNr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Entry\",\"col\":3}},{\"id\":\"4IBBOIxfqW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accounts Receivable\",\"col\":3}},{\"id\":\"El2anpPaFY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"General Ledger\",\"col\":3}},{\"id\":\"1nwcM9upJo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial Balance\",\"col\":3}},{\"id\":\"B7-uxs8tkU\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"tHb3yxthkR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Views</b></span>\",\"col\":12}},{\"id\":\"DnNtsmxpty\",\"type\":\"card\",\"data\":{\"card_name\":\"Pipeline\",\"col\":4}},{\"id\":\"nKKr6fjgjb\",\"type\":\"card\",\"data\":{\"card_name\":\"Payments\",\"col\":4}}]",
+ "content": "[{\"id\":\"VVvJ1lUcfc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Outgoing Bills\",\"col\":3}},{\"id\":\"Vlj2FZtlHV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incoming Bills\",\"col\":3}},{\"id\":\"VVVjQVAhPf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incoming Payment\",\"col\":3}},{\"id\":\"DySNdlysIW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Outgoing Payment\",\"col\":3}},{\"id\":\"9k1rDm2C0l\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vikWSkNm6_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"id\":\"_pRdD6kqUG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Request Payments\",\"col\":3}},{\"id\":\"B0lpGxBgni\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Truckon\",\"col\":3}},{\"id\":\"G984SgVRJN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Allocation\",\"col\":3}},{\"id\":\"1ArNvt9qhz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Truckon Closing\",\"col\":3}},{\"id\":\"F9f4I1viNr\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Entry\",\"col\":3}},{\"id\":\"4IBBOIxfqW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accounts Receivable\",\"col\":3}},{\"id\":\"B7-uxs8tkU\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"tHb3yxthkR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Views</b></span>\",\"col\":12}},{\"id\":\"DnNtsmxpty\",\"type\":\"card\",\"data\":{\"card_name\":\"Pipeline\",\"col\":4}},{\"id\":\"nKKr6fjgjb\",\"type\":\"card\",\"data\":{\"card_name\":\"Payments\",\"col\":4}}]",
  "creation": "2026-04-30 01:47:46.483121",
  "custom_blocks": [],
  "docstatus": 0,
@@ -9,9 +9,9 @@
  "hide_custom": 0,
  "icon": "external-link",
  "idx": 0,
- "indicator_color": "green",
+ "indicator_color": "",
  "is_hidden": 0,
- "label": "Lafarge",
+ "label": "HBM",
  "links": [
   {
    "dependencies": "",
@@ -225,55 +225,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Pipeline",
-   "link_count": 4,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Logon",
-   "link_count": 0,
-   "link_to": "Logon Slip",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Allocation",
-   "link_count": 0,
-   "link_to": "Allocation",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Logon Closing",
-   "link_count": 0,
-   "link_to": "Logon Closing",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Wallet",
-   "link_count": 0,
-   "link_to": "Pay Wallet",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Payments",
    "link_count": 3,
    "link_type": "DocType",
@@ -310,12 +261,61 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Pipeline",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Wallet",
+   "link_count": 0,
+   "link_to": "Payment Wallet",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Truckon",
+   "link_count": 0,
+   "link_to": "Truckon",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Allocation",
+   "link_count": 0,
+   "link_to": "Allocation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Truckon Closing",
+   "link_count": 0,
+   "link_to": "Truckon Closing",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-04-30 02:19:08.259589",
+ "modified": "2026-09-05 00:09:07.304106",
  "modified_by": "Administrator",
  "module": "Psd Manager",
- "name": "Lafarge",
+ "name": "HBM",
  "number_cards": [
   {
    "label": "Total Outgoing Bills",
@@ -344,15 +344,23 @@
  "shortcuts": [
   {
    "doc_view": "",
-   "label": "logon",
-   "link_to": "Logon Slip",
+   "label": "Request Payments",
+   "link_to": "Payment Wallet",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Truckon",
+   "link_to": "Truckon",
    "stats_filter": "[]",
    "type": "DocType"
   },
   {
    "doc_view": "",
-   "label": "Pay Wallet",
-   "link_to": "Pay Wallet",
+   "label": "Truckon Closing",
+   "link_to": "Truckon Closing",
    "stats_filter": "[]",
    "type": "DocType"
   },
@@ -360,13 +368,6 @@
    "doc_view": "",
    "label": "Allocation",
    "link_to": "Allocation",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "",
-   "label": "Logon Closing",
-   "link_to": "Logon Closing",
    "stats_filter": "[]",
    "type": "DocType"
   },
@@ -382,21 +383,7 @@
    "link_to": "Accounts Receivable",
    "report_ref_doctype": "Sales Invoice",
    "type": "Report"
-  },
-  {
-   "doc_view": "",
-   "label": "General Ledger",
-   "link_to": "General Ledger",
-   "report_ref_doctype": "GL Entry",
-   "type": "Report"
-  },
-  {
-   "doc_view": "",
-   "label": "Trial Balance",
-   "link_to": "Trial Balance",
-   "report_ref_doctype": "GL Entry",
-   "type": "Report"
   }
  ],
- "title": "Lafarge"
+ "title": "HBM"
 }
